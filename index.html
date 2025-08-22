@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapphire Client</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+   .logo span {
+            background: linear-gradient(90deg, #1a56db, #0ea5e9, #10b981, #f59e0b, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientMove 5s ease infinite;
+            background-size: 300% 100%;
+            font-weight: 900;
+            font-family: 'Arial Black', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #1a56db, #0ea5e9, #10b981, #f59e0b, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientMove 5s ease infinite;
+            background-size: 300% 100%;
+            font-weight: 900;
+            font-family: 'Arial Black', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+        }
+        
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffffff 0%, #e6f7ff 100%);
+            color: #1a3c5a;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #1a56db 0%, #0ea5e9 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: #ffd700;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%230ea5e920" x="0" y="0" width="100" height="100"/><path fill="%231a56db30" d="M0 0L100 100M100 0L0 100" stroke-width="0.5"/></svg>');
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #1a56db;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #1e3a8a;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #1a56db 0%, #0ea5e9 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 86, 219, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(26, 86, 219, 0.4);
+        }
+        
+        .features {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1a56db;
+            font-size: 36px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #1a56db 0%, #0ea5e9 100%);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0ea5e9 0%, #1a56db 100%);
+            color: white;
+            font-size: 48px;
+            position: relative;
+        }
+        
+        .emoji {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 32px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .feature-content {
+            padding: 25px;
+        }
+        
+        .feature-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a56db;
+        }
+        
+        .feature-content p {
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+        
+        .pricing {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .pricing-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .pricing-card.popular {
+            border: 3px solid #1a56db;
+            position: relative;
+        }
+        
+        .popular-tag {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #1a56db 0%, #0ea5e9 100%);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .price {
+            font-size: 48px;
+            color: #1a56db;
+            margin: 20px 0;
+        }
+        
+        .price span {
+            font-size: 18px;
+            color: #4b5563;
+        }
+        
+        .benefits {
+            list-style: none;
+            text-align: left;
+            margin: 30px 0;
+        }
+        
+        .benefits li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .benefits i {
+            color: #10b981;
+            margin-right: 10px;
+        }
+        
+        footer {
+            background: linear-gradient(90deg, #1a3c5a 0%, #1a56db 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: #93c5fd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            color: #93c5fd;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .pricing-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-card {
+                width: 100%;
+            }
+            
+            .emoji {
+                font-size: 24px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-gem"></i>
+                    <span>Sapphire</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">功能</a></li>
+                    <li><a href="#pricing">购买</a></li>
+                    <li><a href="#support">支持</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>提升您的PVP体验</h1>
+            <p>Sapphire 是 MinecraftPE 版的辅助插件，提供40+功能模块。</p>
+            <a href="#pricing" class="btn">立即购买</a>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">功能特性</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-fist-raised"></i>
+                        <div class="emoji">⚔️</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>战斗功能</h3>
+                        <p>杀戮光环、自动瞄准、碰撞箱、无限光环、防击退、战斗机器人等强大战斗功能。</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                  <div class="feature-icon">
+                        <i class="fas fa-running"></i>
+                        <div class="emoji">🚀</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>移动功能</h3>
+                        <p>移动速度、飞行、空中跳跃、虚空回弹、快速停止、等移动增强功能。</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user"></i>
+                        <div class="emoji">🦸</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Player</h3>
+                        <p>防假人、上帝模式、反作弊禁用、矿物透视、无减速、无蜘蛛网等玩家增强功能。</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-americas"></i>
+                        <div class="emoji">🌍</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>World</h3>
+                        <p>自动破坏、自动搭路、远程商店、自动挖床、世界变速等世界修改功能。</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                        <div class="emoji">🔧</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Misc</h3>
+                        <p>物品管理、快速取物、自动刷屏、防止踢出、智能队友、绕过调整等实用功能。</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                        <div class="emoji">👁️</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>视觉功能</h3>
+                        <p>绘制玩家、实体连线、功能列表、火焰光环、打击特效、视角修改等视觉功能。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">选择您的套餐</h2>
+            <div class="pricing-options">
+                <div class="pricing-card">
+                    <h3>Sapphire 周卡</h3>
+                    <div class="price">¥35 <span>/7天</span></div>
+                    <ul class="benefits">
+                        <li><i class="fas fa-check-circle"></i> 所有功能无限制使用</li>
+                        <li><i class="fas fa-check-circle"></i> 7天完整访问权限</li>
+                        <li><i class="fas fa-check-circle"></i> 标准客户支持</li>
+                        <li><i class="fas fa-check-circle"></i> 单设备使用</li>
+                        <li><i class="fas fa-check-circle"></i> 免费小版本更新</li>
+                    </ul>
+                    <a href="https://shop.xiaoman.top/links/DDBD7155" class="btn" target="_blank">立即购买</a>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-tag">最受欢迎</div>
+                    <h3>Sapphire 月卡</h3>
+                    <div class="price">¥60 <span>/30天</span></div>
+                    <ul class="benefits">
+                        <li><i class="fas fa-check-circle"></i> 所有功能无限制使用</li>
+                        <li><i class="fas fa-check-circle"></i> 30天完整访问权限</li>
+                        <li><i class="fas fa-check-circle"></i> 优先客户支持</li>
+                        <li><i class="fas fa-check-circle"></i> 单设备使用</li>
+                        <li><i class="fas fa-check-circle"></i> 免费大版本更新</li>
+                    </ul>
+                    <a href="https://shop.xiaoman.top/links/DDBD7155" class="btn" target="_blank">立即购买</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Sapphire 永久</h3>
+                    <div class="price">¥120 <span>/永久</span></div>
+                    <ul class="benefits">
+                        <li><i class="fas fa-check-circle"></i> 所有功能无限制使用</li>
+                        <li><i class="fas fa-check-circle"></i> 终身访问权限</li>
+                        <li><i class="fas fa-check-circle"></i> 专属客户支持</li>
+                        <li><i class="fas fa-check-circle"></i> 单设备使用</li>
+                        <li><i class="fas fa-check-circle"></i> 终身免费更新</li>
+                    </ul>
+                    <a href="https://shop.xiaoman.top/links/DDBD7155" class="btn" target="_blank">立即购买</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-gem"></i>
+                <span>Sapphire Client.</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">使用条款</a></li>
+                <li><a href="#">隐私政策</a></li>
+                <li><a href="#">支持</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+            <div class="copyright">
+                &copy; 2024-2025 Sapphire Minecraft 插件。保留所有权利。
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
