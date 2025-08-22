@@ -6,6 +6,92 @@
     <title>Sapphire Client</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+    .download-section {
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 15px;
+            margin: 0 auto 40px;
+            max-width: 1000px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .download-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .download-title {
+            font-size: 32px;
+            color: #1a56db;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .download-description {
+            font-size: 18px;
+            color: #4b5563;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, #1a56db 0%, #0ea5e9 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 86, 219, 0.3);
+            gap: 10px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(26, 86, 219, 0.4);
+        }
+        
+        .download-btn.secondary {
+            background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .download-btn.secondary:hover {
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+        
+        .version-info {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        @media (max-width: 768px) {
+            .download-buttons {
+                flex-direction: column;
+            }
+            
+            .download-title {
+                font-size: 26px;
+            }
+            
+            .download-description {
+                font-size: 16px;
+            }
+        }
    .logo span {
             background: linear-gradient(90deg, #1a56db, #0ea5e9, #10b981, #f59e0b, #ef4444);
             -webkit-background-clip: text;
@@ -380,7 +466,6 @@
                 <ul class="nav-links">
                     <li><a href="#features">功能</a></li>
                     <li><a href="#pricing">购买</a></li>
-                    <li><a href="#support">支持</a></li>
                 </ul>
             </nav>
         </div>
@@ -469,6 +554,22 @@
 
     <section class="pricing" id="pricing">
         <div class="container">
+        <div class="download-section">
+                <div class="download-content">
+                    <h2 class="download-title">下载Sapphire</h2>
+                    <p class="download-description">立即下载最新的Sapphire插件。</p>
+                    <div class="download-buttons">
+                          <a href="https://59-64-118-174.pd1.cjjd19.com:30443/download-cdn.123295.com/123-904/64468dab/1846037120-0/64468dab186223dc86a3a61c1b231f88/c-m94?v=5&t=1755959862&s=175595986273c141d8af47dff622a03120bffacfe5&r=DV2NWU&bzc=2&bzs=313834363033373132303a33383235323434373a31333435323735373a31383231343731363332&bzp=0&bi=57723109&filename=Sapphire_1.0.apk&x-mf-biz-cid=3be908c7-8007-4ca4-9105-207e08d53ec0-3dab77&auto_redirect=0&ndcp=1&cache_type=1&xmfcid=aa500660-bc9f-4f30-bf1d-cf510a90a90d62b0f500b44" class="download-btn" target="_blank">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </a>
+                    </div>
+                    <div class="version-info">
+                        最新版本: v1.2 | 更新日期: 20-8-2025
+                    </div>
+                </div>
+            </div>
+            
             <h2 class="section-title">选择您的套餐</h2>
             <div class="pricing-options">
                 <div class="pricing-card">
@@ -485,7 +586,7 @@
                 </div>
 
                 <div class="pricing-card popular">
-                    <div class="popular-tag">最受欢迎</div>
+                    <div class="popular-tag">Popular</div>
                     <h3>Sapphire 月卡</h3>
                     <div class="price">¥60 <span>/30天</span></div>
                     <ul class="benefits">
@@ -500,7 +601,7 @@
 
                 <div class="pricing-card">
                     <h3>Sapphire 永久</h3>
-                    <div class="price">¥120 <span>/永久</span></div>
+                    <div class="price">¥140 <span>/永久</span></div>
                     <ul class="benefits">
                         <li><i class="fas fa-check-circle"></i> 所有功能无限制使用</li>
                         <li><i class="fas fa-check-circle"></i> 终身访问权限</li>
@@ -523,8 +624,7 @@
             <ul class="footer-links">
                 <li><a href="#">使用条款</a></li>
                 <li><a href="#">隐私政策</a></li>
-                <li><a href="#">支持</a></li>
-                <li><a href="#">联系我们</a></li>
+                <li><a href="https://qun.qq.com/universal-share/share?ac=1&authKey=s7MddwtWDnRgWA5FKQySPg4%2FwzdYMfPzzAwYu5LAkjogRzWbxoNBddnc3Dlq7umZ&busi_data=eyJncm91cENvZGUiOiIzMTQxNjM2ODUiLCJ0b2tlbiI6Ik9DQXFQSkRCL2F1QUVCYnpneXJsWE5oZFA3VzNYd2JGam05UHYweElGM2dDRVlhMVR0Uk03Rk8wSmxOa212RWkiLCJ1aW4iOiIyNzU3NDUyODk3In0%3D&data=Lfvt7xDLBZLhjf2e8R0pNyLNR4aPW9g43OJbCuwgrH_8c9L2cCQBSqH50IY1i743DIHTz8ljmubUVf_9ADkURA&svctype=4&tempid=h5_group_info" target="_blank">联系我们</a></li>
             </ul>
             <div class="copyright">
                 &copy; 2024-2025 Sapphire 保留所有权利。
